@@ -1,6 +1,6 @@
 Name:            corebird
-Version:        0.5
-Release:        2%{?dist}
+Version:        0.6.1
+Release:        0%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
@@ -60,6 +60,10 @@ fi
 %{_datadir}/appdata/
 
 %changelog
+* Tue Feb 04 2014 Ryan Lerch <ryanlerch@fedoraproject.org> 0.6.1-0
+- Update to 0.6.1. This update was released shortly after 0.6, 
+  so skipped 0.6.
+
 * Tue Dec 03 2013 Ryan Lerch <ryanlerch@fedoraproject.org> 0.5-2
 - Removed line from the spec that removed the old font files
 - Changed the spec so the appdata dir is co-owned 
