@@ -1,19 +1,24 @@
 Name:           corebird
-Version:        0.7
+Version:        0.8
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:         0001-Fix-the-build-with-Werror-format-security.patch
+BuildRequires:        autoconf
+BuildRequires:        automake
+BuildRequires:        intltool
+BuildRequires:        libtool
 BuildRequires:        gtk3-devel >= 3.9
 BuildRequires:        glib2-devel >= 2.38
+BuildRequires:        gstreamer1-plugins-base-devel
 BuildRequires:        rest-devel
 BuildRequires:        json-glib-devel
 BuildRequires:        libnotify-devel
 BuildRequires:        sqlite-devel
 BuildRequires:        libsoup-devel
 BuildRequires:        vala-devel
-BuildRequires:        cmake
 BuildRequires:        librsvg2-tools
 BuildRequires:        desktop-file-utils
 BuildRequires:        libgee-devel
@@ -26,15 +31,24 @@ Native GTK Twitter client for the Linux desktop.
 
 %prep
 %setup -q
+%patch0 -p1
+NOCONFIGURE=1 ./autogen.sh
 
 %build
-%{cmake} .
+%configure
 make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
 
-desktop-file-validate %{buildroot}/%{_datadir}/applications/%{name}.desktop
+# Move the man page to the correct directory
+mkdir -p %{buildroot}%{_mandir}/man1
+mv %{buildroot}%{_mandir}/%{name}.1* \
+   %{buildroot}%{_mandir}/man1/%{name}.1*
+
+%find_lang corebird
+
+desktop-file-validate %{buildroot}/%{_datadir}/applications/org.baedert.corebird.desktop
 
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -50,18 +64,20 @@ fi
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
-%files
+%files -f corebird.lang
 %doc COPYING README.md
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/org.baedert.corebird.desktop
 %{_datadir}/%{name}/
 %{_datadir}/glib-2.0/schemas/org.baedert.%{name}.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/icons/hicolor/*/apps/%{name}.svg
 %{_datadir}/appdata/
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Mon Jul 28 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-1
+- Update to 0.8
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7-1
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
