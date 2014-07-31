@@ -73,9 +73,9 @@ fi
 %{_bindir}/%{name}
 %{_datadir}/applications/org.baedert.corebird.desktop
 %{_datadir}/%{name}/
+%{_datadir}/appdata/org.baedert.corebird.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.baedert.%{name}.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/appdata/
 %{_mandir}/man1/%{name}.1*
 
 %changelog
