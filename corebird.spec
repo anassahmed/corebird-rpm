@@ -1,6 +1,6 @@
 Name:           corebird
 Version:        0.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
@@ -46,6 +46,10 @@ mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_mandir}/%{name}.1* \
    %{buildroot}%{_mandir}/man1/%{name}.1*
 
+# Correct the appdata file name
+mv %{buildroot}%{_datadir}/appdata/corebird.appdata.xml \
+   %{buildroot}%{_datadir}/appdata/org.baedert.corebird.appdata.xml
+
 %find_lang corebird
 
 desktop-file-validate %{buildroot}/%{_datadir}/applications/org.baedert.corebird.desktop
@@ -75,6 +79,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Jul 31 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-2
+- Correct the appdata file name
+
 * Mon Jul 28 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-1
 - Update to 0.8
 
