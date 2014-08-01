@@ -1,11 +1,12 @@
 Name:           corebird
 Version:        0.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:         0001-Fix-the-build-with-Werror-format-security.patch
+Patch1:         0001-Update-org.baedert.corebird.appdata.xml.in.patch
 BuildRequires:        autoconf
 BuildRequires:        automake
 BuildRequires:        intltool
@@ -32,6 +33,7 @@ Native GTK Twitter client for the Linux desktop.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 NOCONFIGURE=1 ./autogen.sh
 
 %build
@@ -79,6 +81,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Fri Aug 01 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-3
+- Backport appdata updates from upstream
+
 * Thu Jul 31 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-2
 - Correct the appdata file name
 
