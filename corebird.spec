@@ -1,6 +1,6 @@
 Name:           corebird
 Version:        0.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
@@ -81,6 +81,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Fri Aug 01 2014 Kalev Lember <kalevlember@gmail.com> - 0.8-3
 - Backport appdata updates from upstream
 
