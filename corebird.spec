@@ -1,12 +1,10 @@
 Name:           corebird
-Version:        0.8
-Release:        4%{?dist}
+Version:        0.9
+Release:        0%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
-Patch0:         0001-Fix-the-build-with-Werror-format-security.patch
-Patch1:         0001-Update-org.baedert.corebird.appdata.xml.in.patch
 BuildRequires:        autoconf
 BuildRequires:        automake
 BuildRequires:        intltool
@@ -32,8 +30,6 @@ Native GTK Twitter client for the Linux desktop.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 NOCONFIGURE=1 ./autogen.sh
 
 %build
@@ -42,15 +38,6 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
-
-# Move the man page to the correct directory
-mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_mandir}/%{name}.1* \
-   %{buildroot}%{_mandir}/man1/%{name}.1*
-
-# Correct the appdata file name
-mv %{buildroot}%{_datadir}/appdata/corebird.appdata.xml \
-   %{buildroot}%{_datadir}/appdata/org.baedert.corebird.appdata.xml
 
 %find_lang corebird
 
@@ -81,6 +68,8 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Jan 29 2015 Ryan Lerch <ryanlerch@fedoraproject.org> - 0.9-0
+- Update to upstream version 0.9
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
