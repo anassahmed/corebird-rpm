@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        0.9
+Version:        1.0
 Release:        0%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
@@ -65,9 +65,12 @@ fi
 %{_datadir}/appdata/org.baedert.corebird.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.baedert.%{name}.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/dbus-1/services/org.baedert.%{name}.service
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu May 28 2015 Ryan Lerch <ryanlerch@fedoraproject.org> - 1.0-0
+- Update to upstream version 1.0
 * Thu Jan 29 2015 Ryan Lerch <ryanlerch@fedoraproject.org> - 0.9-0
 - Update to upstream version 0.9
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8-4
