@@ -37,7 +37,7 @@ NOCONFIGURE=1 ./autogen.sh
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=%{buildroot}
+%make_install
 
 %find_lang corebird
 
@@ -73,6 +73,7 @@ fi
 * Sat Aug 22 2015 Kalev Lember <klember@redhat.com> - 1.0.1-1
 - Update to 1.0.1
 - Use license macro for COPYING
+- Use make_install macro
 
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0-1
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
