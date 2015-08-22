@@ -58,7 +58,8 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f corebird.lang
-%doc COPYING README.md
+%license COPYING
+%doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/org.baedert.corebird.desktop
 %{_datadir}/%{name}/
@@ -71,6 +72,7 @@ fi
 %changelog
 * Sat Aug 22 2015 Kalev Lember <klember@redhat.com> - 1.0.1-1
 - Update to 1.0.1
+- Use license macro for COPYING
 
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.0-1
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
