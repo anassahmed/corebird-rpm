@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        1.0.1
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
@@ -70,6 +70,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Thu Oct 01 2015 Ryan Lerch <rlerch@redhat.com> - 1.1-1
+- Update to 1.1
+
 * Sat Aug 22 2015 Kalev Lember <klember@redhat.com> - 1.0.1-1
 - Update to 1.0.1
 - Use license macro for COPYING
