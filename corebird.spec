@@ -41,6 +41,7 @@ make %{?_smp_mflags}
 
 %find_lang corebird
 
+%check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/org.baedert.corebird.desktop
 
 %post
@@ -71,6 +72,7 @@ fi
 %changelog
 * Mon May 09 2016 Kalev Lember <klember@redhat.com> - 1.2-1
 - Update to 1.2
+- Run desktop-file-validate in the %%check section
 
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
