@@ -1,6 +1,6 @@
 Name:           corebird
-Version:        1.1
-Release:        2%{?dist}
+Version:        1.2
+Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
@@ -62,7 +62,6 @@ fi
 %doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/org.baedert.corebird.desktop
-%{_datadir}/%{name}/
 %{_datadir}/appdata/org.baedert.corebird.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.baedert.%{name}.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
@@ -70,6 +69,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Mon May 09 2016 Kalev Lember <klember@redhat.com> - 1.2-1
+- Update to 1.2
+
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
