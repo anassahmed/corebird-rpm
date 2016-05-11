@@ -2,28 +2,30 @@ Name:           corebird
 Version:        1.2
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
+
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:        autoconf
-BuildRequires:        automake
-BuildRequires:        intltool
-BuildRequires:        libtool
-BuildRequires:        gtk3-devel >= 3.9
-BuildRequires:        glib2-devel >= 2.38
-BuildRequires:        gstreamer1-plugins-base-devel
-BuildRequires:        rest-devel
-BuildRequires:        json-glib-devel
-BuildRequires:        libnotify-devel
-BuildRequires:        sqlite-devel
-BuildRequires:        libsoup-devel
-BuildRequires:        vala-devel
-BuildRequires:        librsvg2-tools
-BuildRequires:        desktop-file-utils
-BuildRequires:        libgee-devel
+
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  intltool
+BuildRequires:  libtool
+BuildRequires:  gtk3-devel >= 3.9
+BuildRequires:  glib2-devel >= 2.38
+BuildRequires:  gstreamer1-plugins-base-devel
+BuildRequires:  rest-devel
+BuildRequires:  json-glib-devel
+BuildRequires:  libnotify-devel
+BuildRequires:  sqlite-devel
+BuildRequires:  libsoup-devel
+BuildRequires:  vala-devel
+BuildRequires:  librsvg2-tools
+BuildRequires:  desktop-file-utils
+BuildRequires:  libgee-devel
 
 # For icon directories
-Requires:           hicolor-icon-theme
+Requires:       hicolor-icon-theme
 
 %description
 Native GTK Twitter client for the Linux desktop.
