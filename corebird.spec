@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        1.2.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
@@ -13,6 +13,7 @@ BuildRequires:  intltool
 BuildRequires:  libtool
 BuildRequires:  gtk3-devel >= 3.9
 BuildRequires:  glib2-devel >= 2.38
+BuildRequires:  gstreamer1-plugins-bad-free-devel
 BuildRequires:  gstreamer1-plugins-base-devel
 BuildRequires:  rest-devel
 BuildRequires:  json-glib-devel
@@ -22,8 +23,8 @@ BuildRequires:  libsoup-devel
 BuildRequires:  vala-devel
 BuildRequires:  librsvg2-tools
 BuildRequires:  desktop-file-utils
-BuildRequires:  libgee-devel
 
+Requires:       gstreamer1-plugins-bad-free%{?_isa}
 # For icon directories
 Requires:       hicolor-icon-theme
 
@@ -72,6 +73,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Mon Aug 01 2016 Kalev Lember <klember@redhat.com> - 1.3-1
+- Update to 1.3
+
 * Sun May 22 2016 Kalev Lember <klember@redhat.com> - 1.2.2-1
 - Update to 1.2.2
 
