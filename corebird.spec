@@ -21,7 +21,11 @@ BuildRequires:  vala-devel
 BuildRequires:  librsvg2-tools
 BuildRequires:  desktop-file-utils
 
+%if 0%{?fedora} < 25
 Requires:       gstreamer1-plugins-bad-free%{?_isa}
+%else
+Requires:       gstreamer1-plugins-bad-free-gtk%{?_isa}
+%endif
 # For icon directories
 Requires:       hicolor-icon-theme
 
@@ -70,6 +74,7 @@ fi
 %changelog
 * Sat Sep 10 2016 Kalev Lember <klember@redhat.com> - 1.3.1-2
 - Use upstream bootstrapped tarball
+- Require gstreamer1-plugins-bad-free-gtk on F25+
 
 * Thu Sep 08 2016 Kalev Lember <klember@redhat.com> - 1.3.1-1
 - Update to 1.3.1
