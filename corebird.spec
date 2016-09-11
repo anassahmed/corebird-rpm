@@ -1,16 +1,13 @@
 Name:           corebird
 Version:        1.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Native GTK Twitter client
 
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
-Source0:        https://github.com/baedert/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/baedert/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
-BuildRequires:  autoconf
-BuildRequires:  automake
-BuildRequires:  intltool
-BuildRequires:  libtool
+BuildRequires:  gettext
 BuildRequires:  gtk3-devel >= 3.9
 BuildRequires:  glib2-devel >= 2.38
 BuildRequires:  gstreamer1-plugins-bad-free-devel
@@ -33,7 +30,6 @@ Native GTK Twitter client for the Linux desktop.
 
 %prep
 %setup -q
-NOCONFIGURE=1 ./autogen.sh
 
 %build
 %configure
@@ -63,7 +59,6 @@ fi
 
 %files -f corebird.lang
 %license COPYING
-%doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/org.baedert.corebird.desktop
 %{_datadir}/appdata/org.baedert.corebird.appdata.xml
@@ -73,6 +68,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Sep 10 2016 Kalev Lember <klember@redhat.com> - 1.3.1-2
+- Use upstream bootstrapped tarball
+
 * Thu Sep 08 2016 Kalev Lember <klember@redhat.com> - 1.3.1-1
 - Update to 1.3.1
 
