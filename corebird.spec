@@ -1,6 +1,6 @@
 Name:           corebird
-Version:        1.3.1
-Release:        2%{?dist}
+Version:        1.3.2
+Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
 License:        GPLv3+
@@ -72,6 +72,9 @@ fi
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sun Sep 25 2016 Kalev Lember <klember@redhat.com> - 1.3.2-1
+- Update to 1.3.2
+
 * Sat Sep 10 2016 Kalev Lember <klember@redhat.com> - 1.3.1-2
 - Use upstream bootstrapped tarball
 - Require gstreamer1-plugins-bad-free-gtk on F25+
