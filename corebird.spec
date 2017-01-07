@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        1.3.3
+Version:        1.4
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
@@ -8,8 +8,8 @@ URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gettext
-BuildRequires:  gtk3-devel >= 3.9
-BuildRequires:  glib2-devel >= 2.38
+BuildRequires:  gtk3-devel
+BuildRequires:  glib2-devel
 BuildRequires:  gstreamer1-plugins-bad-free-devel
 BuildRequires:  gstreamer1-plugins-base-devel
 BuildRequires:  rest-devel
@@ -72,6 +72,9 @@ fi
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Sat Jan 07 2017 Kalev Lember <klember@redhat.com> - 1.4.0-1
+- Update to 1.4.0
+
 * Tue Oct 04 2016 Kalev Lember <klember@redhat.com> - 1.3.3-1
 - Update to 1.3.3
 
