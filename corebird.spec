@@ -7,6 +7,9 @@ License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
+# Backported from upstream
+Patch0:         0001-CompletionTextView-Don-t-enable-language-menu.patch
+
 BuildRequires:  gettext
 BuildRequires:  gtk3-devel
 BuildRequires:  glib2-devel
@@ -35,6 +38,7 @@ Native GTK Twitter client for the Linux desktop.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
