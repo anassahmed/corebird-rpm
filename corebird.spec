@@ -63,13 +63,13 @@ fi
 
 %files -f corebird.lang
 %license COPYING
-%{_bindir}/%{name}
+%{_bindir}/corebird
 %{_datadir}/applications/org.baedert.corebird.desktop
 %{_datadir}/appdata/org.baedert.corebird.appdata.xml
-%{_datadir}/glib-2.0/schemas/org.baedert.%{name}.gschema.xml
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/dbus-1/services/org.baedert.%{name}.service
-%{_mandir}/man1/%{name}.1*
+%{_datadir}/glib-2.0/schemas/org.baedert.corebird.gschema.xml
+%{_datadir}/icons/hicolor/*/apps/corebird.png
+%{_datadir}/dbus-1/services/org.baedert.corebird.service
+%{_mandir}/man1/corebird.1*
 
 %changelog
 * Tue Oct 04 2016 Kalev Lember <klember@redhat.com> - 1.3.3-1
