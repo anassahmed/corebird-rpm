@@ -10,6 +10,7 @@ Source0:        https://github.com/baedert/%{name}/releases/download/%{version}/
 BuildRequires:  gettext
 BuildRequires:  gtk3-devel
 BuildRequires:  glib2-devel
+BuildRequires:  gspell-devel
 BuildRequires:  gstreamer1-plugins-bad-free-devel
 BuildRequires:  gstreamer1-plugins-base-devel
 BuildRequires:  rest-devel
