@@ -1,14 +1,11 @@
 Name:           corebird
-Version:        1.4
+Version:        1.4.1
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
 License:        GPLv3+
 URL:            http://corebird.baedert.org/
 Source0:        https://github.com/baedert/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
-
-# Backported from upstream
-Patch0:         0001-CompletionTextView-Don-t-enable-language-menu.patch
 
 BuildRequires:  gettext
 BuildRequires:  gtk3-devel
@@ -38,7 +35,6 @@ Native GTK Twitter client for the Linux desktop.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure
@@ -77,6 +73,9 @@ fi
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Sun Jan 08 2017 Kalev Lember <klember@redhat.com> - 1.4.1-1
+- Update to 1.4.1
+
 * Sat Jan 07 2017 Kalev Lember <klember@redhat.com> - 1.4.0-1
 - Update to 1.4.0
 
