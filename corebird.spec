@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        1.5
+Version:        1.5.1
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
@@ -73,6 +73,9 @@ fi
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Fri Jul 07 2017 Gwyn Ciesla <limburgher@gmail.com> - 1.5.1-1
+- 1.5.1, stability bug fixes.
+
 * Tue May 02 2017 Gwyn Ciesla <limburgher@gmail.com> - 1.5-1
 - 1.5, multiple bug fixes.
 
