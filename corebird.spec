@@ -1,6 +1,6 @@
 Name:           corebird
 Version:        1.5.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Native GTK Twitter client
 
 License:        GPLv3+
@@ -73,6 +73,9 @@ fi
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
 * Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
