@@ -1,6 +1,6 @@
 Name:           corebird
-Version:        1.5.1
-Release:        3%{?dist}
+Version:        1.6
+Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
 License:        GPLv3+
@@ -13,7 +13,6 @@ BuildRequires:  glib2-devel
 BuildRequires:  gspell-devel
 BuildRequires:  gstreamer1-plugins-bad-free-devel
 BuildRequires:  gstreamer1-plugins-base-devel
-BuildRequires:  rest-devel
 BuildRequires:  json-glib-devel
 BuildRequires:  libnotify-devel
 BuildRequires:  sqlite-devel
@@ -66,13 +65,16 @@ fi
 %license COPYING
 %{_bindir}/corebird
 %{_datadir}/applications/org.baedert.corebird.desktop
-%{_datadir}/appdata/org.baedert.corebird.appdata.xml
 %{_datadir}/glib-2.0/schemas/org.baedert.corebird.gschema.xml
 %{_datadir}/icons/hicolor/*/apps/corebird.png
 %{_datadir}/dbus-1/services/org.baedert.corebird.service
+%{_datadir}/metainfo/org.baedert.corebird.appdata.xml
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Fri Aug 25 2017 Kalev Lember <klember@redhat.com> - 1.6-1
+- Update to 1.6
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
