@@ -21,11 +21,7 @@ BuildRequires:  vala-devel
 BuildRequires:  librsvg2-tools
 BuildRequires:  desktop-file-utils
 
-%if 0%{?fedora} < 25
-Requires:       gstreamer1-plugins-bad-free%{?_isa}
-%else
 Requires:       gstreamer1-plugins-bad-free-gtk%{?_isa}
-%endif
 # For icon directories
 Requires:       hicolor-icon-theme
 
