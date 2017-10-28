@@ -33,7 +33,7 @@ Native GTK Twitter client for the Linux desktop.
 
 %build
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
 %make_install
