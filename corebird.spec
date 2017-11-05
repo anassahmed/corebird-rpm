@@ -1,5 +1,5 @@
 Name:           corebird
-Version:        1.7.1
+Version:        1.7.2
 Release:        1%{?dist}
 Summary:        Native GTK Twitter client
 
@@ -68,6 +68,9 @@ fi
 %{_mandir}/man1/corebird.1*
 
 %changelog
+* Sun Nov 05 2017 Kalev Lember <klember@redhat.com> - 1.7.2-1
+- Update to 1.7.2
+
 * Sat Oct 28 2017 Kalev Lember <klember@redhat.com> - 1.7.1-1
 - Update to 1.7.1
 
